@@ -1,0 +1,38 @@
+## allt som är värt att veta från denna kurs står häri.
+
+library(xts)
+
+# create a regular xts out of an irregular xts
+start1 <- "2015-01-01"
+end1 <- "2018-01-01"
+start1 <- as.Date(start1)
+end1 <- as.Date(end1)
+date_seq <- seq(from=start1, to=end1, by="day")
+date_seq <- xts(, date_seq) # zero width xts object
+df_reg <- merge(df_irreg, date_seq, fill=na.locf)
+
+# Convert index to lower frequency
+> index(QGS10) <- as.yearqtr(index(QGS10))
+> index(GDP) <- as.yearqtr(index(GDP))
+> merge(QGS10, GDP)
+
+# ide på konvertera en df till lägre freq, tex som med b matrix.
+df_index_mthly <- as.yearmon(index(df))
+df_mthly <- df[df_index_mthly]
+df_daily_ffill <- to.period(df_mthly, period="daily")
+
+# bfill
+na.locf(x, fromLast = TRUE)
+
+
+# split apply combine .eg split by symbol, apply mean, combine rows do one dataset
+split()
+lapply()
+do.call() #eg rbind
+
+to.period()
+
+na.locf()
+na.approx()
+
+##
