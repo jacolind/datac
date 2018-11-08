@@ -1,0 +1,4 @@
+https://google.github.io/styleguide/Rguide.xml
+
+https://github.com/google/styleguide/blob/gh-pages/pyguide.md
+
